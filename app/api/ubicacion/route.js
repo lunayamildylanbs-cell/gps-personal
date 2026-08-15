@@ -127,8 +127,7 @@ export async function GET(request) {
             .eq("device_id", DISPOSITIVO)
             .order("created_at", {
                 ascending: false
-            })
-            .limit(100);
+            });
 
         if (error) {
             console.error(error);
