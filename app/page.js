@@ -175,18 +175,23 @@ export default function Dashboard() {
                         mapa.current
                     );
 
+            const ahora = Date.now();
+
             const puntos =
                 [...datos.historial]
+                    .filter((item) => {
+                        const tiempo =
+                            new Date(item.created_at).getTime();
+            
+                        return ahora - tiempo <= 20000;
+                    })
                     .reverse()
-                    .map(
-                        (item) => [
-                            item.latitude,
-                            item.longitude
-                        ]
-                    );
-
+                    .map((item) => [
+                        item.latitude,
+                        item.longitude
+                    ]);
+            
             if (puntos.length > 1) {
-
                 L.polyline(
                     puntos,
                     {
