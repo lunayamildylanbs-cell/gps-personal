@@ -4,7 +4,7 @@ import { timingSafeEqual } from "crypto";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const DISPOSITIVO = "celular_01";
+const DISPOSITIVO = "Celular";
 
 function compararSeguro(valor, esperado) {
     if (!valor || !esperado) {
