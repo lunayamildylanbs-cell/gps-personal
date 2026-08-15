@@ -183,7 +183,7 @@ export default function Dashboard() {
                         const tiempo =
                             new Date(item.created_at).getTime();
             
-                        return ahora - tiempo <= 20000;
+                        return ahora - tiempo <= 300000;
                     })
                     .reverse()
                     .map((item) => [
