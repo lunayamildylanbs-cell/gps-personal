@@ -219,13 +219,17 @@ export default function Dashboard() {
                     `
                 );
 
-            mapa.current.setView(
-                [
-                    ultima.latitude,
-                    ultima.longitude
-                ],
-                16
-            );
+            if (!mapa.current._gpsInicializado) {
+                mapa.current.setView(
+                    [
+                        ultima.latitude,
+                        ultima.longitude
+                    ],
+                    16
+                );
+
+                mapa.current._gpsInicializado = true;
+            }
 
             capaRuta.current =
                 grupo;
